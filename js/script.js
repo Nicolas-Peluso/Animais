@@ -1,4 +1,4 @@
-import scrollSuave from './modules/scrollSuave.js';
+import ScrollSuave from './modules/scrollSuave.js';
 import Scrolldefault from './modules/animaçãoSroll.js';
 import Cordiao from './modules/crodiao.js';
 import ShowDesc from './modules/ShowDesc.js';
@@ -11,8 +11,10 @@ import initFuncionamento from './modules/Funcionamento.js';
 import fetchAnimais from './modules/FetchAnimais.js';
 import FetchBit from './modules/bitcoinFetch.js';
 
+const ScrollSuavew = new ScrollSuave('a[href^="#"]');
+
 menuMobile();
-scrollSuave();
+ScrollSuavew.init();
 Scrolldefault();
 Cordiao();
 ShowDesc();
