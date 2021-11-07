@@ -1,0 +1,16 @@
+@import "geral.css";
+@import "modal.css";
+@import "Tolltip.css";
+@import "DropDownMenu.css";
+@import "menuMobile.css";
+@import "numeros.css";
+
+.ShowSenha{
+    background-color: black;
+}
+
+.ShowSenha input{
+    position: relative;
+    top: 36px;
+    right: 42px;
+}

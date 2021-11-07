@@ -1,0 +1,13 @@
+.TollTip{
+    position: absolute;
+    z-index: 500;
+    background-color: rgba(0, 0, 0, 0.289);   
+    box-shadow: 0 0 0 2px black;
+    padding: .5rem;
+    color: white;
+    font-family: serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: .875rem;
+    max-width: 150px;
+    border-radius: 2px;
+}
