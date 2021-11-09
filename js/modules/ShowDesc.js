@@ -11,7 +11,6 @@ export default function ShowDesc() {
   imgs.forEach((img) => {
     img.addEventListener('click', () => {
       const ref = img.getAttribute('class');
-      console.log(ref);
       handleClick(ref);
     });
   });

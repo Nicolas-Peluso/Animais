@@ -113,7 +113,9 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     overflow-y: scroll;
     grid-column: 2;
   }
-  
+  .animais-lista li img{
+    cursor: pointer;
+  }
   .animais-lista::-webkit-scrollbar {
     width: 18px;
   }
@@ -159,6 +161,7 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     margin-top: 2rem;
     margin-bottom: .5rem;
     color: #E54;
+    cursor: pointer;
   }
   
   .faq-lista dt::before {

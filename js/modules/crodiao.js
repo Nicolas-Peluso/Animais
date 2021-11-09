@@ -1,6 +1,6 @@
 export default class Cordiao {
-  constructor() {
-    this.faqList = document.querySelectorAll('.faq-lista dt');
+  constructor(dt) {
+    this.faqList = document.querySelectorAll(dt);
   }
 
   faqMake() {
@@ -13,6 +13,9 @@ export default class Cordiao {
   }
 
   initAcordiao() {
-    console.log(this.faqList);
+    console.log(this.faqList[0].nextElementSibling.outerHTML.startsWith('<dd'));
+    if (this.faqList[0].outerHTML.startsWith('<dt>') && this.faqList[0].nextElementSibling.outerHTML.startsWith('<dd')) {
+      this.faqMake();
+    } else console.log('voce deve ter um dl seguida por um dt, o elemeto passado nao corresponde a esses parametros');
   }
 }
