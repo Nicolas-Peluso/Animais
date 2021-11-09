@@ -1,5 +1,4 @@
-# Animais
-
+# O que Aprendemos:
 <ul>
 <li>
 <h2>java-script para iniciantes</h2>
