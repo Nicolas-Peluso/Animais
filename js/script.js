@@ -14,15 +14,16 @@ import FetchBit from './modules/bitcoinFetch.js';
 const ScrollSuavew = new ScrollSuave('a[href^="#"]');
 const acordiao = new Cordiao('.faq-lista dt');
 const modall = new Modal();
+const tolltip = new Tolltip('[data-tollTip="Tolltip"]');
 
 menuMobile();
 acordiao.initAcordiao();
 ScrollSuavew.init();
 modall.init();
+tolltip.init();
 Scrolldefault();
 ShowDesc();
 FetchBit();
-Tolltip();
 dropDown();
 initAnimaNumeros();
 initFuncionamento();
