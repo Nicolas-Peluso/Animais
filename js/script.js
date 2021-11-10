@@ -2,7 +2,7 @@ import ScrollSuave from './modules/scrollSuave.js';
 import Scrolldefault from './modules/animaçãoSroll.js';
 import Cordiao from './modules/crodiao.js';
 import ShowDesc from './modules/ShowDesc.js';
-import modal from './modules/modal.js';
+import Modal from './modules/modal.js';
 import Tolltip from './modules/tollTip.js';
 import dropDown from './modules/DorpDownMenu.js';
 import menuMobile from './modules/menu-Mobile.js';
@@ -13,13 +13,14 @@ import FetchBit from './modules/bitcoinFetch.js';
 
 const ScrollSuavew = new ScrollSuave('a[href^="#"]');
 const acordiao = new Cordiao('.faq-lista dt');
+const modall = new Modal();
 
 menuMobile();
 acordiao.initAcordiao();
 ScrollSuavew.init();
+modall.init();
 Scrolldefault();
 ShowDesc();
-modal();
 FetchBit();
 Tolltip();
 dropDown();
