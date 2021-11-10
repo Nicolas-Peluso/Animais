@@ -1,39 +1,62 @@
-export default function Modal() {
-  const ModalAbrir = document.querySelector('[data-modal="abrir"]');
-  const ModalCOntainer = document.querySelector("[data-modal='container']");
-  const ModalFechar = document.querySelector('[data-modal="fechar"]');
-  const Form = document.querySelector('.modal form');
-  const ShowSenha = document.querySelector('.ShowSenha input');
-  const senhaInput = document.querySelector('input[type="password"]');
+export default class Modal {
+  constructor() {
+    this.ModalAbrir = document.querySelector('[data-modal="abrir"]');
+    this.ModalCOntainer = document.querySelector("[data-modal='container']");
+    this.ModalFechar = document.querySelector('[data-modal="fechar"]');
+    this.Form = document.querySelector('.modal form');
+    this.ShowSenha = document.querySelector('.ShowSenha input');
+    this.senhaInput = document.querySelector('input[type="password"]');
+    this.eventToggleModal = this.eventToggleModal.bind(this);
+    this.showSenha = this.showSenha.bind(this);
+    this.clickForaModal = this.clickForaModal.bind(this);
+  }
 
-  function abriModal(e) {
+  abriModal(e) {
     e.preventDefault();
-    ModalCOntainer.classList.add('ativo');
+    this.ModalCOntainer.classList.add('ativo');
   }
 
-  function fecharModal(e) {
+  fecharModal(e) {
     e.preventDefault();
-    ModalCOntainer.classList.remove('ativo');
+    this.ModalCOntainer.classList.remove('ativo');
   }
 
-  function clickForaModal(e) {
-    if (e.target === this) ModalCOntainer.classList.remove('ativo');
+  toggleModal() {
+    this.ModalCOntainer.classList.toggle('ativo');
   }
 
-  function showSenha() {
-    if (ShowSenha.checked) senhaInput.setAttribute('type', 'text');
-    else senhaInput.setAttribute('type', 'password');
+  eventToggleModal(e) {
+    e.preventDefault();
+    console.log(this);
+    this.toggleModal();
   }
 
-  if (ModalCOntainer && ModalFechar && ModalAbrir) {
-    ModalCOntainer.addEventListener('click', clickForaModal);
+  clickForaModal(e) {
+    console.log(this.ModalCOntainer);
+    if (e.target === this.ModalCOntainer) this.ModalCOntainer.classList.remove('ativo');
+  }
 
-    ModalAbrir.addEventListener('click', abriModal);
+  showSenha() {
+    console.log(this.senhaInput);
+    if (this.ShowSenha.checked) this.senhaInput.setAttribute('type', 'text');
+    else this.senhaInput.setAttribute('type', 'password');
+  }
 
-    ModalFechar.addEventListener('click', fecharModal);
+  EventListeners() {
+    this.ModalCOntainer.addEventListener('click', this.clickForaModal);
 
-    Form.addEventListener('submit', fecharModal);
+    this.ModalAbrir.addEventListener('click', this.eventToggleModal);
 
-    ShowSenha.addEventListener('click', showSenha);
+    this.ModalFechar.addEventListener('click', this.eventToggleModal);
+
+    this.Form.addEventListener('submit', this.fecharModal);
+
+    this.ShowSenha.addEventListener('click', this.showSenha);
+  }
+
+  init() {
+    if (this.ModalCOntainer && this.ModalFechar && this.ModalAbrir) {
+      this.EventListeners();
+    }
   }
 }
