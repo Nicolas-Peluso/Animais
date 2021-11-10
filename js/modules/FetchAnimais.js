@@ -1,3 +1,5 @@
+import InitAnimaNumeros from './AnimaNumeros.js';
+
 export function createAnimal(Animal) {
   const div = document.createElement('div');
   const Numeros = document.querySelector('.numeros-grid');
@@ -6,9 +8,14 @@ export function createAnimal(Animal) {
   <span>${Animal.total}</span> `;
   Numeros.appendChild(div);
 }
+
 export default async function fetchAnimais() {
   const request = await fetch('./AnimaisApi.json');
   const response = await request.json();
-
   response.forEach((Animal) => createAnimal(Animal));
+
+  if (request.ok) {
+    const animaNumeros = new InitAnimaNumeros('.numeros-grid span', 'ativo');
+    animaNumeros.Init();
+  }
 }
