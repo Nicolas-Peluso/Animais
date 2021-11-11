@@ -95,6 +95,7 @@
 <li>como js lida com assincronismo</li>
 <li>task queue</li>
 <li>gerenciamento da memoria</li>
+<li>event loop</li>
 </ul>
 </li>
 
