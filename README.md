@@ -91,6 +91,10 @@
 <li>Function expression</li>
 <li>loops e iterable</li>
 <li>rest e spread</li>
+<li>call stack</li>
+<li>como js lida com assincronismo</li>
+<li>task queue</li>
+<li>gerenciamento da memoria</li>
 </ul>
 </li>
 
