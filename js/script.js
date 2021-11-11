@@ -11,18 +11,22 @@ import fetchAnimais from './modules/FetchAnimais.js';
 import FetchBit from './modules/bitcoinFetch.js';
 
 const ScrollSuavew = new ScrollSuave('a[href^="#"]');
-const acordiao = new Cordiao('.faq-lista dt');
-const modall = new Modal();
-const tolltip = new Tolltip('[data-tollTip="Tolltip"]');
-
-fetchAnimais();
-menuMobile();
-acordiao.initAcordiao();
 ScrollSuavew.init();
+
+const acordiao = new Cordiao('.faq-lista dt');
+acordiao.initAcordiao();
+
+const modall = new Modal();
 modall.init();
+
+const tolltip = new Tolltip('[data-tollTip="Tolltip"]');
 tolltip.init();
+
+menuMobile();
 Scrolldefault();
 ShowDesc();
 FetchBit();
 dropDown();
 initFuncionamento();
+
+fetchAnimais('../../AnimaisApi.json', '.numeros-grid');
