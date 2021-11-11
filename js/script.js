@@ -4,7 +4,7 @@ import Cordiao from './modules/crodiao.js';
 import ShowDesc from './modules/ShowDesc.js';
 import Modal from './modules/modal.js';
 import Tolltip from './modules/tollTip.js';
-import dropDown from './modules/DorpDownMenu.js';
+import DropDownMenuS from './modules/DorpDownMenu.js';
 import menuMobile from './modules/menu-Mobile.js';
 import initFuncionamento from './modules/Funcionamento.js';
 import fetchAnimais from './modules/FetchAnimais.js';
@@ -25,9 +25,11 @@ tolltip.init();
 const ScrollAnimacao = new ScrollAnima('.js-scroll');
 ScrollAnimacao.init();
 
+const DropDownMen = new DropDownMenuS('[data-dropDown]');
+DropDownMen.init();
+
 menuMobile();
 ShowDesc();
-dropDown();
 initFuncionamento();
 
 FetchBit('https://blockchain.info/ticker', '.BitCoin span');
