@@ -1,5 +1,5 @@
 import ScrollSuave from './modules/scrollSuave.js';
-import Scrolldefault from './modules/animaçãoSroll.js';
+import ScrollAnima from './modules/animaçãoSroll.js';
 import Cordiao from './modules/crodiao.js';
 import ShowDesc from './modules/ShowDesc.js';
 import Modal from './modules/modal.js';
@@ -22,8 +22,10 @@ modall.init();
 const tolltip = new Tolltip('[data-tollTip="Tolltip"]');
 tolltip.init();
 
+const ScrollAnimacao = new ScrollAnima('.js-scroll');
+ScrollAnimacao.init();
+
 menuMobile();
-Scrolldefault();
 ShowDesc();
 dropDown();
 initFuncionamento();
