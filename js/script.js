@@ -25,8 +25,8 @@ tolltip.init();
 menuMobile();
 Scrolldefault();
 ShowDesc();
-FetchBit();
 dropDown();
 initFuncionamento();
 
+FetchBit('https://blockchain.info/ticker', '.BitCoin span');
 fetchAnimais('../../AnimaisApi.json', '.numeros-grid');
