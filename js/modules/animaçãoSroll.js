@@ -1,7 +1,10 @@
+import Debouncing from '../helper/debouncing.js';
+
 export default class ScrollAnima {
   constructor(target) {
     this.sections = document.querySelectorAll(target);
     this.TotalTop = (window.innerHeight * 70) / 100;
+    this.checkDistance = Debouncing(this.checkDistance.bind(this), 50);
   }
 
   getDistance() {
