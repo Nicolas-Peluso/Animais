@@ -1,17 +1,23 @@
 import outside from './OutsideClick.js';
 
-export default function menuMobile() {
-  const menu = document.querySelector('[data-menu="lista"]');
-  const button = document.querySelector('[data-menu="button"]');
-
-  function handleClick() {
-    menu.classList.toggle('active');
-    button.classList.toggle('active');
+export default class menuMobile {
+  constructor(lista, button) {
+    this.menu = document.querySelector(lista);
+    this.button = document.querySelector(button);
+    this.handleClick = this.handleClick.bind(this);
   }
-  outside(() => {
-    menu.classList.remove('active');
-    button.classList.remove('active');
-  }, menu);
 
-  button.addEventListener('click', handleClick);
+  handleClick() {
+    this.menu.classList.toggle('active');
+    this.button.classList.toggle('active');
+    outside(() => {
+      this.menu.classList.remove('active');
+      this.button.classList.remove('active');
+    }, this.menu);
+  }
+
+  init() {
+    if (this.menu && this.button) this.button.addEventListener('click', this.handleClick);
+    return this;
+  }
 }
