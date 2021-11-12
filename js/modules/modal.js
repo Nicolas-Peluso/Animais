@@ -27,17 +27,14 @@ export default class Modal {
 
   eventToggleModal(e) {
     e.preventDefault();
-    console.log(this);
     this.toggleModal();
   }
 
   clickForaModal(e) {
-    console.log(this.ModalCOntainer);
     if (e.target === this.ModalCOntainer) this.ModalCOntainer.classList.remove('ativo');
   }
 
   showSenha() {
-    console.log(this.senhaInput);
     if (this.ShowSenha.checked) this.senhaInput.setAttribute('type', 'text');
     else this.senhaInput.setAttribute('type', 'password');
   }

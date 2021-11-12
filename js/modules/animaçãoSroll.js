@@ -15,11 +15,9 @@ export default class ScrollAnima {
         distancia: Math.floor(SectionTop - this.TotalTop),
       };
     }));
-    console.log(this.Distance);
   }
 
   checkDistance() {
-    console.log(window.pageYOffset);
     this.Distance.forEach((item) => {
       if (window.pageYOffset > item.distancia) item.element.classList.add('ativo');
       else if (item.element.classList.contains('ativo')) item.element.classList.remove('ativo');
