@@ -6,7 +6,7 @@ import Modal from './modules/modal.js';
 import Tolltip from './modules/tollTip.js';
 import DropDownMenuS from './modules/DorpDownMenu.js';
 import MenuMobile from './modules/menu-Mobile.js';
-import initFuncionamento from './modules/Funcionamento.js';
+import FuncionamentoEstabelecimento from './modules/Funcionamento.js';
 import fetchAnimais from './modules/FetchAnimais.js';
 import FetchBit from './modules/bitcoinFetch.js';
 
@@ -31,8 +31,10 @@ DropDownMen.init();
 const menuMobil = new MenuMobile('[data-menu="lista"]', '[data-menu="button"]');
 menuMobil.init();
 
+const Working = new FuncionamentoEstabelecimento('.dados', '[data-Semana]');
+Working.init();
+
 ShowDesc();
-initFuncionamento();
 
 FetchBit('https://blockchain.info/ticker', '.BitCoin span');
 fetchAnimais('../../AnimaisApi.json', '.numeros-grid');
