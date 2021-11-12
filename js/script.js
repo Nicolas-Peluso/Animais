@@ -5,7 +5,7 @@ import ShowDesc from './modules/ShowDesc.js';
 import Modal from './modules/modal.js';
 import Tolltip from './modules/tollTip.js';
 import DropDownMenuS from './modules/DorpDownMenu.js';
-import menuMobile from './modules/menu-Mobile.js';
+import MenuMobile from './modules/menu-Mobile.js';
 import initFuncionamento from './modules/Funcionamento.js';
 import fetchAnimais from './modules/FetchAnimais.js';
 import FetchBit from './modules/bitcoinFetch.js';
@@ -28,7 +28,9 @@ ScrollAnimacao.init();
 const DropDownMen = new DropDownMenuS('[data-dropDown]');
 DropDownMen.init();
 
-menuMobile();
+const menuMobil = new MenuMobile('[data-menu="lista"]', '[data-menu="button"]');
+menuMobil.init();
+
 ShowDesc();
 initFuncionamento();
 
