@@ -223,6 +223,12 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     border: 2px solid black;
     margin-right: 0px;
   }
+
+.Container-Slide-dad{
+  grid-column: 1 / -1;
+  margin-bottom: 200px;
+}
+
   .copy {
     grid-column: 3/5;
     margin-bottom: 2rem;
