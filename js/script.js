@@ -9,6 +9,7 @@ import MenuMobile from './modules/menu-Mobile.js';
 import FuncionamentoEstabelecimento from './modules/Funcionamento.js';
 import fetchAnimais from './modules/FetchAnimais.js';
 import FetchBit from './modules/bitcoinFetch.js';
+import SlideNav from './modules/Animais-Slide/SlideNav.js';
 
 const ScrollSuavew = new ScrollSuave('a[href^="#"]');
 ScrollSuavew.init();
@@ -33,6 +34,10 @@ menuMobil.init();
 
 const Working = new FuncionamentoEstabelecimento('.dados', '[data-Semana]');
 Working.init();
+
+const Slider = new SlideNav('.Slide', '.Slide-Container');
+Slider.init();
+Slider.addControl('.pagination-Item');
 
 ShowDesc();
 
